@@ -11,6 +11,7 @@ router.post("/", async (req, res) => {
     let counter = new Counter({
         count: req.body.count
     });
+    
     counter = await counter.save();
     res.send(counter)
 });
