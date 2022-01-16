@@ -3,13 +3,11 @@ const router = express.Router();
 const { Counter } = require("../model/counterModel");
 
 router.get("/", async (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
     const counter = await Counter.find();
     res.send(counter);
 });
 
 router.post("/", async (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
     let counter = new Counter({
         count: req.body.count
     });
@@ -19,7 +17,6 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
     const counter = await Counter.findByIdAndUpdate(
         req.params.id,
         {

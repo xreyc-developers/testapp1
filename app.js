@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
+app.use(cors({
+    origin: '*'
+}));
+
 require("./initialize/db")();
 require("./initialize/routes")(app);
 
