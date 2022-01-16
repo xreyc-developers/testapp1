@@ -5,7 +5,6 @@ const { Counter } = require("../model/counterModel");
 router.get("/", async (req, res) => {
     const counter = await Counter.find();
     res.send(counter);
-    
 });
 
 router.post("/", async (req, res) => {
